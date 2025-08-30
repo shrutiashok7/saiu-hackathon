@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <!-- Educational Elements -->
+        <div class="edu-element abacus-1">🧮</div>
+        <div class="edu-element calculator-1">🔢</div>
+        <div class="edu-element calculator-2">📱</div>
+        <div class="edu-element flask-1">🧪</div>
+        <div class="edu-element computer-1">💻</div>
+        <div class="edu-element computer-2">🖥</div>
+        <div class="edu-element tube-1">🧪</div>
+        <div class="edu-element tube-2">⚗</div>
+        <div class="edu-element graduation-1">🎓</div>
+        <div class="edu-element book-1">📚</div>
+        <div class="edu-element book-2">📖</div>
+        <div class="edu-element geometry-1">📐</div>
+        <div class="edu-element geometry-2">📏</div>
+        <div class="edu-element geometry-3">🔺</div>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Hi, I'm Nexus!</h1>
+            <div class="header-controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <div class="menu-container">
+                <button class="menu-button" id="menuButton">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="1"></circle>
+                        <circle cx="19" cy="12" r="1"></circle>
+                        <circle cx="5" cy="12" r="1"></circle>
+                    </svg>
+                </button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <button class="dropdown-item" id="clearChat">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3,6 5,6 21,6"></polyline>
+                            <path d="m19,6v14a2,2 0 0,1 -2,2H7a2,2 0 0,1 -2,-2V6m3,0V4a2,2 0 0,1 2,-2h4a2,2 0 0,1 2,2v2"></path>
+                        </svg>
+                        Clear Chat
+                    </button>
+                    <button class="dropdown-item" id="exportChat">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7,10 12,15 17,10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Export Chat
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <!-- Floating Bot Avatar -->
+            <div class="bot-avatar" id="botAvatar">
+                <div class="ghost-antenna">
+                    <div class="antenna-ball"></div>
+                </div>
+                <div class="ghost-body">
+                    <div class="ghost-face">
+                        <div class="eye left-eye"></div>
+                        <div class="eye right-eye"></div>
+                        <div class="mouth"></div>
+                    </div>
+                    <div class="ghost-bottom">
+                        <div class="ghost-wave"></div>
+                        <div class="ghost-wave"></div>
+                        <div class="ghost-wave"></div>
+                        <div class="ghost-wave"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sample AI message -->
+            <div class="message ai-message">
+                <div class="message-content">
+                    <div class="message-text">Hello! I'm your AI assistant. How can I help you today?</div>
+                    <div class="message-actions">
+                        <button class="action-button" title="More options">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6,9 12,15 18,9"></polyline>
+                            </svg>
+                        </button>
+                        <div class="message-dropdown">
+                            <button class="dropdown-item speak-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                                    <path d="m19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                                </svg>
+                                Speak
+                            </button>
+                            <button class="dropdown-item translate-main-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m5 8 6 6"></path>
+                                    <path d="m4 14 6-6 2-3"></path>
+                                    <path d="M2 5h12"></path>
+                                    <path d="M7 2h1"></path>
+                                    <path d="m22 22-5-10-5 10"></path>
+                                    <path d="M14 18h6"></path>
+                                </svg>
+                                Translate
+                                <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9,18 15,12 9,6"></polyline>
+                                </svg>
+                            </button>
+                            
+                            <!-- Language Submenu -->
+                            <div class="language-submenu">
+                                <button class="dropdown-item translate-btn" data-lang="hi">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="m5 8 6 6"></path>
+                                        <path d="m4 14 6-6 2-3"></path>
+                                        <path d="M2 5h12"></path>
+                                        <path d="M7 2h1"></path>
+                                        <path d="m22 22-5-10-5 10"></path>
+                                        <path d="M14 18h6"></path>
+                                    </svg>
+                                    हिंदी
+                                </button>
+                                <button class="dropdown-item translate-btn" data-lang="ta">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="m5 8 6 6"></path>
+                                        <path d="m4 14 6-6 2-3"></path>
+                                        <path d="M2 5h12"></path>
+                                        <path d="M7 2h1"></path>
+                                        <path d="m22 22-5-10-5 10"></path>
+                                        <path d="M14 18h6"></path>
+                                    </svg>
+                                    தமிழ்
+                                </button>
+                                <button class="dropdown-item translate-btn" data-lang="te">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="m5 8 6 6"></path>
+                                        <path d="m4 14 6-6 2-3"></path>
+                                        <path d="M2 5h12"></path>
+                                        <path d="M7 2h1"></path>
+                                        <path d="m22 22-5-10-5 10"></path>
+                                        <path d="M14 18h6"></path>
+                                    </svg>
+                                    తెలుగు
+                                </button>
+                                <button class="dropdown-item translate-btn" data-lang="en">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="m5 8 6 6"></path>
+                                        <path d="m4 14 6-6 2-3"></path>
+                                        <path d="M2 5h12"></path>
+                                        <path d="M7 2h1"></path>
+                                        <path d="m22 22-5-10-5 10"></path>
+                                        <path d="M14 18h6"></path>
+                                    </svg>
+                                    English
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input">
+            <div class="input-container">
+                <input type="text" id="messageInput" placeholder="Type your message..." />
+                <button id="sendButton">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
